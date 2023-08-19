@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "The job is automatically triggerd by a ${{ github.event_name }} event."
-  #     - name: Get Parameter from System Manager Parameter Store
-  #       run: |
-  #         PARAMETER_VALUE=$(aws ssm get-parameter --name weiheng-parameter --query Parameter.Value --output text)
-  #         echo "Parameter Value: $PARAMETER_VALUE"
-  #       env: 
-  #         AWS_DEFAULT_REGION: ap-southeast-1
-  #         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  #         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Get Parameter from System Manager Parameter Store
+        run: |
+          PARAMETER_VALUE=$(aws ssm get-parameter --name weiheng-parameter --query Parameter.Value --output text)
+          echo "Parameter Value: $PARAMETER_VALUE"
+        env: 
+          AWS_DEFAULT_REGION: ap-southeast-1
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
   install-dependencies:
     runs-on: ubuntu-latest

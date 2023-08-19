@@ -16,7 +16,7 @@ functions:
           path: /
           method: get
     environment:
-      ACCESS_KEY: testhengy
+      ACCESS_KEY: ${ssm:weiheng-parameter-FULLCICD}
 
 plugins:
   - serverless-offline

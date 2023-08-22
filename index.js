@@ -1,4 +1,6 @@
 module.exports.handler = async (event) => {
+
+    console.log("[INFO] For monitoring lesson")
     return {
       statusCode: 200,
       body: JSON.stringify(
